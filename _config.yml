@@ -1,8 +1,67 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: Scry 
+description: Testing applying Scry feature and content gems atop Just The Docs basic Just The Docs template.
 theme: just-the-docs
+
+# Just the Docs only emits the Ctrl/Cmd+K listener when this is set.
+search_enabled: true
+search:
+  focus_shortcut_key: "k"
+
+plugins:
+  - jekyll-jtd-toc-nav
+  - jekyll-dice-tray
+  - jekyll-hover-popup
+  - jekyll-image-links
+  - dark-dungeons-theme
+  - jekyll-scry-content
+
+scry_content:
+  enabled: true
+  only: []
+  exclude: []
+  warn_missing_ruleset: true
+  warn_missing_content: true
+
+sass:
+  quiet_deps: true
+  silence_deprecations: ['import', 'global-builtin', 'color-functions']
 
 url: https://just-the-docs.github.io
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
+
+defaults:
+  - scope:
+      path: "docs"
+      type: "pages"
+    values:
+      layout: "default"
+
+# RPG callouts (monster, item) come from the scry-rpg-callouts content gem.
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# External navigation links
+nav_external_links:
+  - title: Directsun Games
+    url: https://puzzledungeon.com/games/
+
+# Aux links for the upper right navigation
+aux_links:
+  "Return to the Puzzle Dungeon blog":
+    - "https://puzzledungeon.com/"
+
+image_links:
+  enabled: true
+  viewer_by_default: true
+  inline_by_default: true
+  labels_by_default: false
+
+sidebar_toc: true
+sidebar_toc_levels: "1..4"
+
+hover_popup:
+  nav_hover_preview: false
